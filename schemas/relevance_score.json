@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RelevanceScore",
+  "description": "Relevance score for a single paper relative to the review topic",
+  "type": "object",
+  "properties": {
+    "paper_id": {
+      "type": "string",
+      "description": "Semantic Scholar paperId"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Relevance score: >=0.6 = keep, <0.6 = discard"
+    },
+    "reason": {
+      "type": "string",
+      "description": "One-sentence justification for the score"
+    }
+  },
+  "required": ["paper_id", "score", "reason"]
+}

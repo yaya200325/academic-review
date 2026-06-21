@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SectionSynthesis",
+  "description": "Structured synthesis notes for one review section, used as input to the drafting stage",
+  "type": "object",
+  "properties": {
+    "section_title": { "type": "string" },
+    "core_claims": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "3–5 key claims supported by papers in this section"
+    },
+    "method_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "papers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "paper_ids in this method group"
+          }
+        },
+        "required": ["name", "papers"]
+      },
+      "description": "Groups of methods or approaches, each containing the papers that use them"
+    },
+    "consensus_points": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Points where papers broadly agree"
+    },
+    "controversies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Disagreements or debates in the literature"
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "What is unknown, understudied, or not covered by available abstracts"
+    },
+    "representative_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "The most important paper_ids to cite in this section (5–10 recommended)"
+    },
+    "word_count_target": {
+      "type": "integer",
+      "description": "Target word count for this section's prose"
+    }
+  },
+  "required": ["section_title", "core_claims", "consensus_points", "evidence_gaps", "representative_refs", "word_count_target"]
+}

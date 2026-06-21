@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Outline",
+  "description": "Review outline with sections, word count targets, and assigned papers",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Concise title for the literature review"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "Section number, 1-based"
+          },
+          "title": {
+            "type": "string",
+            "description": "Section heading"
+          },
+          "description": {
+            "type": "string",
+            "description": "1–2 sentence description of what this section covers"
+          },
+          "estimated_words": {
+            "type": "integer",
+            "description": "Estimated word count for this section"
+          },
+          "estimated_refs": {
+            "type": "integer",
+            "description": "Estimated number of citations in this section"
+          },
+          "assigned_paper_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Paper IDs most relevant to this section"
+          }
+        },
+        "required": ["index", "title", "description", "estimated_words", "estimated_refs"]
+      }
+    }
+  },
+  "required": ["title", "sections"]
+}

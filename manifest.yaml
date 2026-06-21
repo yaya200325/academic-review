@@ -1,0 +1,54 @@
+name: academic-review
+version: 2.1.2
+description: >
+  Declarative manifest for the static/dynamic split. SKILL.md uses this manifest
+  to decide which fragments to load for a given literature review job.
+
+always_load:
+  - static/core/stance.md
+  - static/core/pipeline.md
+  - static/core/output-format.md
+
+axes:
+  paper_type:
+    detect: |
+      Infer from user context whether the review is for a course paper or an
+      undergraduate thesis. If unclear, ask explicitly.
+    values:
+      course_paper: static/fragments/paper_type/course_paper.md
+      undergraduate_thesis: static/fragments/paper_type/undergraduate_thesis.md
+    default: course_paper
+    multi: false
+
+  language:
+    detect: |
+      Detect the user's target writing language from the request. Use zh for a
+      Chinese-language review and en for an English-language review. If unclear, ask.
+    values:
+      zh: static/fragments/language/zh.md
+      en: static/fragments/language/en.md
+    default: zh
+    multi: false
+
+references:
+  on_demand:
+    - condition: entering Stage 1 for literature search
+      path: static/stages/search.md
+    - condition: entering Stage 2 for relevance screening
+      path: static/stages/screening.md
+    - condition: entering Stage 3 for abstract-level extraction
+      path: static/stages/extraction.md
+    - condition: entering Stage 4 for outline planning
+      path: static/stages/outline.md
+    - condition: entering Stage 5 for section synthesis
+      path: static/stages/synthesis.md
+    - condition: entering Stage 6 for review drafting
+      path: static/stages/drafting.md
+    - condition: entering Stage 7 for figure and table insertion
+      path: static/stages/diagram_table.md
+    - condition: entering Stage 8 for polishing
+      path: static/stages/polishing.md
+    - condition: entering Stage 8.5 for reference validation
+      path: static/stages/reference_validation.md
+    - condition: entering Stage 9 for Word export
+      path: static/stages/export.md

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ComparisonTable",
+  "description": "Method comparison table data for embedding in the Word document",
+  "type": "object",
+  "properties": {
+    "caption": {
+      "type": "string",
+      "description": "Table caption in the review's language"
+    },
+    "columns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Column headers in display order"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "One row per method; keys are column header strings"
+      },
+      "description": "Data rows, one per method/approach being compared"
+    }
+  },
+  "required": ["caption", "columns", "rows"]
+}
