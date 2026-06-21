@@ -144,10 +144,6 @@ academic-review/
 - 必须阅读全文并进行实验数据复核的研究任务
 - 需要替代导师、作者或审稿人进行最终学术判断的场景
 
-## 上传 GitHub 前建议补充
-
-- `examples/`：展示输入 prompt、阶段输出样例和最终文档截图。
-- `agents/openai.yaml`：补充 Codex UI 展示所需的 skill 名称、短描述和默认提示词。
 
 ## 许可证
 
