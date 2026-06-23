@@ -138,12 +138,6 @@ academic-review/
 - Figure generation depends on the image-generation capability available to the running agent.
 - The generated review still requires human academic judgment before formal submission.
 
-## Before Publishing to GitHub
-
-Recommended additions:
-
-- `examples/`: add a sample prompt, representative checkpoint outputs, and final document screenshots.
-- `agents/openai.yaml`: add Codex UI metadata such as display name, short description, and default prompt.
 
 ## License
 
